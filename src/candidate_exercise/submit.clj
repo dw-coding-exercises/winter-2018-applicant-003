@@ -7,7 +7,9 @@
 
 (defn prepare-project []
   (sh "lein" "clean")
-  (println (:out (sh "zip" zip-name "-r" "."))))
+  (println (:out (sh "zip" zip-name
+                     "-x" ".idea*" "*.iml" ".nrepl*"
+                     "-r" "."))))
 
 (defn print-instructions []
   (println (str "We just zipped up your work into the file '" zip-name
