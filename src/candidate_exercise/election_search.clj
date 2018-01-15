@@ -92,7 +92,10 @@
                 [state-ocd])
               (when (and state-ocd
                          (not (str/blank? city)))
-                [(str state-ocd "/place:" (str/trim (str/lower-case city)))])))))
+                [(str state-ocd "/place:" (-> city
+                                              str/trim
+                                              str/lower-case
+                                              (str/replace #"\s" "_")))])))))
 
 (defn form->address
   "Turn a form from `candidate-exercise.home/address-form` into an address

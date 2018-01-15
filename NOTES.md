@@ -11,6 +11,9 @@ I did just that.
 If you `export GOOGLE_CIVIC_INFO_API_KEY="$MY_API_KEY"` in your environment
 before starting the server, the system will use that key to derive its OCD-IDs.
 
+Interestingly enough, Google appears to resolve "Pryor Creek, OK" as "Pryor,
+OK", which brings back different results from the TurboVote API.
+
 ## Using Component-like records
 You also state in your instructions that you're looking for a basic
 implementation for turning an address into a list of OCD-IDs. I wanted to make
@@ -46,6 +49,11 @@ do and that we've been notified.
 
 In addition, the results page is super-duper bland. I would like to spice that
 up.
+
+I would also investigate the small discrepancy between Google's resultant
+OCD-IDs for Pryor Creek, OK and TurboVote's expectations. I'm wondering whether
+it's a space issue. I find it doubtful, but it's hard to diagnose without
+knowing more cities that have upcoming elections.
 
 Lastly, external integration points on an application server can be
 problematic. I already added timeouts to mitigate this. Given loads more time

@@ -57,4 +57,11 @@
                                         {::search/city "  Portland  "
                                          ::search/state "  OR  "})
              ["ocd-division/country:us/state:or"
-              "ocd-division/country:us/state:or/place:portland"])))))
+              "ocd-division/country:us/state:or/place:portland"])))
+
+    (testing "It replaces spaces with underscores."
+      (is (= (search/district-divisions dds
+                                        {::search/city "Pryor Creek"
+                                         ::search/state "OK"})
+             ["ocd-division/country:us/state:ok"
+              "ocd-division/country:us/state:ok/place:pryor_creek"])))))
